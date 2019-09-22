@@ -1,0 +1,66 @@
+#服务端口与服务名称
+server:
+  port: 9001
+spring:
+  application:
+    name: wms-server
+  #数据源配置
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://10.105.0.18:3306/CP_WMS
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    # 德鲁伊连接池配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    #   连接池的监控配置
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  #redis配置
+  redis:
+    host: 10.105.0.18
+    port: 6379
+
+#mybatis配置 下划线转化为驼峰开启
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+#debug: true
+
+#eureka服务客户端配置
+#eureka:
+#  instance:
+#    #开启IP地址注册不再使用主机名进行注册 默认是主机名（hostname）
+#    prefer-ip-address: true
+#    #注册到EurekaServer的唯一实例ID
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#    #Eurekaclient客户端每隔20秒向EurekaServer服务端发送一次心跳进行续约，告诉服务自己还活着
+#    lease-renewal-interval-in-seconds: 2
+#    #EurekaServer在收到上一次发送的心跳以后，5秒之内还没有收到EurekaClient客户端发送的心跳，将把该服务进行隔离
+#    lease-expiration-duration-in-seconds: 5
+#  client:
+#    #将自己注册到EurekaServer中去 默认是true
+#    register-with-eureka: true
+#    #将检索所EurekaServer中的所有实例（服务） 默认是true
+#    fetch-registry: true
+#    #每隔15秒去检索一下EurekaServer中所有实例（服务） 默认30秒 如果是zuul需要将时间缩短
+#    registry-fetch-interval-seconds: 2
+#    serviceUrl:
+#      defaultZone: http://10.105.0.17:7001/eureka/,http://10.105.0.20:7002/eureka/
+
+
+

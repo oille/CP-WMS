@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/wms-parent/wms-common/wms-common.iml" filepath="$PROJECT_DIR$/wms-parent/wms-common/wms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wms-parent/wms-cp-service/wms-cp-service.iml" filepath="$PROJECT_DIR$/wms-parent/wms-cp-service/wms-cp-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wms-parent/wms-parent.iml" filepath="$PROJECT_DIR$/wms-parent/wms-parent.iml" />
+    </modules>
+  </component>
+</project>
