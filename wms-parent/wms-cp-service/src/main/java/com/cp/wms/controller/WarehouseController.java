@@ -34,6 +34,8 @@ public class WarehouseController{
     public Integer addWarehouse(Warehouse warehouse){
         Integer id = warehouseService.addWarehouse(warehouse);
         return id;
+
+
     }
 
     @GetMapping("/warehouse/{id}")
